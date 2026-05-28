@@ -10,41 +10,69 @@
 
     <nav>
       <ul>
-        <li><a href="#">Ação</a></li>
-        <li><a href="#">Aventura</a></li>
-        <li><a href="#">Terror</a></li>
-        <li><a href="#">Tiro</a></li>
-        <li><a href="#">Esportes</a></li>
-        <li><a href="#">Corrida</a></li>
+        <button onclick="buscarMelhoresJogos()" class="btnNav">Home</button>
+        <button onclick="buscarPorGenero('action')" class="btnNav">Ação</button>
+        <button onclick="buscarPorGenero('adventure')" class="btnNav">Aventura</button>
+        <button onclick="buscarPorGenero('role-playing-games-rpg')" class="btnNav">RPG</button>
+        <button onclick="buscarPorGenero('shooter')" class="btnNav">Tiro</button>
+        <button onclick="buscarPorGenero('indie')" class="btnNav">Indie</button>
+        <button onclick="exibirFavoritos()" id = "btnFavorito" class="btnNav">Favoritos</li>
       </ul>
     </nav>
+
+    <div id = "popup" class="popup popupEscondido">
+      <div class="popupConteudo">
+        <button id="fecharPopup">X</button>
+          <div class = 'cabecalho'>
+            <div class = "esquerda">
+                <img src="../imagens/Gta V.png" alt="">
+            </div>
+            <div class= "direita">
+                <div class = "containerDireito">
+                    <h2>História</h2>
+                    <p>Grand Theft Auto V é um jogo eletrônico de ação e aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games. É o sétimo título principal da série Grand Theft Auto e foi lançado originalmente em 17 de setembro de 2013 para PlayStation 3 e Xbox 360, com remasterizações lançadas em 2014 para PlayStation 4 e Xbox One, em 2015 para Microsoft Windows e em 2022 para PlayStation 5 e Xbox Series X/S. O jogo se passa no estado ficcional de San Andreas, com a história da campanha um jogador seguindo três criminosos e seus esforços para realizarem assaltos sob a pressão de uma agência governamental. O mundo aberto permite que os jogadores naveguem livremente pelas áreas rurais e urbanas de San Andreas.</p>
+                    <button class = 'adicionarFavoritos'>Adicionar os favoritos</button>
+                </div>
+                <div class="containerDireito">
+                    <h2>Faça sua review</h2>
+                    <form action="">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome ou deixe em branco para ser anonimo">
+                        <label for="review">Escreva sua review: </label>
+                        <textarea name="review" id="review"></textarea>
+                        <button type="submit" class="adicionarFavoritos">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <h1>Reviews</h1> 
+            <div class="comentario">
+                <div class = "line"></div>
+                <h2>Nome do cara</h2>
+                <p>Grand Theft Auto V é um jogo eletrônico de ação e aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games. É o sétimo título principal da série Grand Theft Auto e foi lançado originalmente em 17 de setembro de 2013 para PlayStation 3 e Xbox 360, com remasterizações lançadas em 2014 para PlayStation 4 e Xbox One, em 2015 para Microsoft Windows e em 2022 para PlayStation 5 e Xbox Series X/S. O jogo se passa no estado ficcional de San Andreas, com a história da campanha um jogador seguindo três criminosos e seus esforços para realizarem assaltos sob a pressão de uma agência governamental. O mundo aberto permite que os jogadores naveguem livremente pelas áreas rurais e urbanas de San Andreas.</p>
+                <div class = "line"></div>
+            </div>
+             <div class="comentario">
+                <div class = "line"></div>
+                <h2>Nome do cara</h2>
+                <p>Grand Theft Auto V é um jogo eletrônico de ação e aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games. É o sétimo título principal da série Grand Theft Auto e foi lançado originalmente em 17 de setembro de 2013 para PlayStation 3 e Xbox 360, com remasterizações lançadas em 2014 para PlayStation 4 e Xbox One, em 2015 para Microsoft Windows e em 2022 para PlayStation 5 e Xbox Series X/S. O jogo se passa no estado ficcional de San Andreas, com a história da campanha um jogador seguindo três criminosos e seus esforços para realizarem assaltos sob a pressão de uma agência governamental. O mundo aberto permite que os jogadores naveguem livremente pelas áreas rurais e urbanas de San Andreas.</p>
+                <div class = "line"></div>
+            </div>
+        </div>
+      </div>
+    </div>
 
     <div class="pesquisa">
       <input type="text" id = "pesquisa" placeholder="Digite o que você procura" />
     </div>
 
-    <h1>Mais Vendidos</h1>
+    <h3 id = "tituloPagina">Jogos bem avaliados</h3>
 
     <div class="catalogo" id = "divCatalogo">
-      <a href="./páginas/Gta V.html" class="card">
-        <img src="./imagens/Gta V.png" alt="GTA V" />
-        <h2>Grand Theft Auto V</h2>
-      </a>
-
-      <a href="./páginas/Minecraft.html" class="card">
-        <img src="./imagens/Minecraft.jpeg" alt="Minecraft" />
-        <h2>Minecraft</h2>
-      </a>
-
-      <a href="./páginas/Red Dead Redemption 2.html" class="card">
-        <img src="./imagens/Red Dead Redemption 2.jpeg" alt="Red Dead Redemption 2" />
-        <h2>Red Dead Redemption 2</h2>
-      </a>
-
-      <a href="./páginas/Pubg.html" class="card">
-        <img src="./imagens/Pubg.jpeg" alt="Pubg" />
-        <h2>PUBG</h2>
-      </a>
+      <div id = "loading" class="escondido">
+        <h1>Carregando...</h1>
+      </div>
     </div>
 
     <script src="script.js"></script>
